@@ -103,6 +103,7 @@ body {
   border-radius: 4px;
   transition: color var(--transition-dur-and-time-func),
     background-color var(--transition-dur-and-time-func),
+    border-color var(--transition-dur-and-time-func),
     box-shadow var(--transition-dur-and-time-func);
 }
 .sorting-btn:hover,
@@ -179,6 +180,10 @@ body {
   padding: 24px 0;
 }
 .nav-list-link {
+  position: relative;
+  transition: color var(--transition-dur-and-time-func);
+}
+.contact-info-link {
   transition: color var(--transition-dur-and-time-func);
 }
 .nav-list-link:hover,
@@ -220,9 +225,6 @@ body {
   display: flex;
   align-items: center;
   gap: 40px;
-}
-.nav-list-item {
-  position: relative;
 }
 .current {
   color: var(--next-accent-color);
@@ -520,9 +522,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
   background-color: var(--accent-color);
   transform: translateY(100%);
   transition: transform var(--transition-dur-and-time-func);
@@ -547,7 +547,7 @@ body {
   background-color: rgba(46, 47, 66, 0.4);
   opacity: 1;
   visibility: visible;
-  transition: opacity 500ms linear, visibylity 500ms linear;
+  transition: opacity var(--transition-dur-and-time-func), visibylity var(--transition-dur-and-time-func);
 }
 .modal {
   position: absolute;
@@ -555,32 +555,36 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 408px;
-  height: 576px;
+  min-height: 584px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  transition: transform var(--white-background);
 }
 .modal-close-btn {
   position: absolute;
   top: 24px;
-  right: 25px;
+  right: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
   background: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
+  transition: background-color var(--transition-dur-and-time-func), border var(--transition-dur-and-time-func);
 }
 .modal-close-btn:hover,
-.modal-close-btn:focus,
-.modal-close-btn:active {
+.modal-close-btn:focus {
   background-color: var(--next-accent-color);
   fill: var(--white-background);
+  border: none;
+}
+.modal-close-btn-icon {
+  transition: fill var(--transition-dur-and-time-func);
 }
 .is-hidden {
   opacity: 0;
